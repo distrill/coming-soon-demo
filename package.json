@@ -1,0 +1,26 @@
+{
+  "name": "coming-soon-homes",
+  "version": "0.0.1",
+  "description": "Prototype for Coming Soon Homes, Vantage West Realty in Kelowna",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brent Hamilton",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "google": "^1.3.0",
+    "mongoose": "^4.2.4",
+    "morgan": "^1.6.1",
+    "node-geocoder": "^3.4.1",
+    "reload": "^0.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.1.0"
+  }
+}
