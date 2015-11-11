@@ -19,7 +19,7 @@ var ListingSchema = new Schema({
     photo: [String],
     beds: Number,
     baths: Number,
-    squareFee: Number,
+    squareFeet: Number,
     garages: Number,
     expiration: Date,
     feature: String
