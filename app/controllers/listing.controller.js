@@ -2,10 +2,15 @@ var Listing = require('mongoose').model('Listing');
 
 // ************************************************************************** //
 //                         render functions                                   //
-module.exports.renderAddListing = function(req, res, next) {
-    res.render('addListing', {});
+module.exports.renderNewListing = function(req, res, next) {
+    res.render('newListing', {});
 };
 
+module.exports.renderSingleListing = function(req, res) {
+    res.render('singleListing', {
+        listing: req.listing
+    });
+};
 
 // ************************************************************************** //
 //                              CRUD                                          //
@@ -53,21 +58,21 @@ module.exports.update = function(req, res) {
                     });
                 } else {
                     // successful object update
-                    console.log( 'object successfully updated');
+                    console.log('object successfully updated');
                     res.redirect('/');
                 }
-            })
+            });
         } else {
             // no listing object
-            console.log( 'no listing object, nothing to update :(');
+            console.log('no listing object, nothing to update :(');
             res.redirect('/');
         }
     } else {
         // no user
-        console.log( 'user not logged in, not authorized to update');
+        console.log('user not logged in, not authorized to update');
         res.redirect('/');
     }
-}
+};
 
 
 // ************************************************************************** //

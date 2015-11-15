@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+    author:         Brent Hamilton (2015)
+    checkit:        https://github.com/distrill
+-->
+<html>
+    <% include partials/head %>
+<body>
+
+    <% include partials/header %>
+
+    <!-- Main Content -->
+    <h2>New Listing</h2>
+    <form method="post" action="/newListing">
+        <input type="text" name="title" placeholder="title"/><br>
+        <input type="text" name="price" placeholder="price"/><br>
+        <input type="text" name="beds" placeholder="beds"/><br>
+        <input type="text" name="baths" placeholder="baths"/><br>
+        <input type="text" name="squareFeet" placeholder="squareFeet"/><br>
+        <input type="text" name="garages" placeholder="garages"/><br>
+        <input type="text" name="expiration" placeholder="expiration"/><br>
+        <input type="text" name="feature" placeholder="feature"/><br>
+        <input type="text" name="address" placeholder="address"/><br>
+        <input type="submit" value="Add Listing"/>
+    </form>
+    <!-- End Main Content -->
+
+    <% include partials/footer %>
+
+</body>
+</html>

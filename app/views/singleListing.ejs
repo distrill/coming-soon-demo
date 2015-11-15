@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+    author:         Brent Hamilton (2015)
+    checkit:        https://github.com/distrill
+-->
+<html>
+    <% include partials/head %>
+<body>
+
+    <% include partials/header %>
+
+    <!-- Main Content -->
+    <div class="view-single-listing">
+        <%= listing.title %><br>
+        <%= listing.price %><br>
+        <%= listing.beds %><br>
+        <%= listing.baths %><br>
+        <%= listing.squareFeet %><br>
+        <%= listing.garages %><br>
+        <%= listing.expiration %><br>
+        <%= listing.feature %><br>
+        <%= listing.address %><br>
+    </div>
+    <!-- End Main Content -->
+
+    <% include partials/footer %>
+
+</body>
+</html>
