@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 html, body {
@@ -10,14 +11,27 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: #e3e7eb;
+    background: $bg-color;
+}
+
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: -3rem;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+    height: 3rem;
 }
 
 .front-page-main-content {
-    padding: 40px;
-    color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5rem 2rem;
     width: 100%;
-    height: 80%;
+    height: 100%;
     .main-content-scroll-box {
         display: inline-block;
         width: 30%;
@@ -32,26 +46,9 @@ html, body {
         background: red;
     }
 }
-
-.front-page-browse {
-    width: 80%;
-    margin: auto;
-    // background: black;
-    color: white;
-    .browse-elem-row {
-        font-size: 0;
-        height: 400px;
-        margin-bottom: 50px;
-        .browse-elem {
-            text-align: center;
-            font-size: 1rem;
-            display: inline-block;
-            background: white;
-            color: black;
-            width: 25%;
-            height: 100%;
-            padding: 20px;
-            border: solid 1px black;
-        }
-    }
+.listing-elem {
+     width: 100%;
+     height: 40%;
+     border:solid 1px black;
+     background:white;
 }
