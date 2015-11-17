@@ -31,6 +31,9 @@ module.exports.create = function(req, res, next) {
     });
 };
 
+// c[R]ud (read all)
+
+
 // cr[U]d
 module.exports.update = function(req, res) {
     if (req.session.passport.user) {

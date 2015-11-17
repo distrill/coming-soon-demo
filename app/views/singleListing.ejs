@@ -1,29 +1,19 @@
-<!DOCTYPE html>
-<!--
-    author:         Brent Hamilton (2015)
-    checkit:        https://github.com/distrill
--->
-<html>
-    <% include partials/head %>
-<body>
+<% include partials/head %>
 
-    <% include partials/header %>
-
-    <!-- Main Content -->
-    <div class="view-single-listing">
-        <%= listing.title %><br>
-        <%= listing.price %><br>
-        <%= listing.beds %><br>
-        <%= listing.baths %><br>
-        <%= listing.squareFeet %><br>
-        <%= listing.garages %><br>
-        <%= listing.expiration %><br>
-        <%= listing.feature %><br>
-        <%= listing.address %><br>
-    </div>
-    <!-- End Main Content -->
+        <!-- Main Content -->
+        <div class="view-single-listing">
+            single listing page, w/ the following data:<br><br>
+            id: <%= listing._id %><br>
+            title: <%= listing.title %><br>
+            price: <%= listing.price %><br>
+            beds: <%= listing.beds %><br>
+            baths: <%= listing.baths %><br>
+            square feet: <%= listing.squareFeet %><br>
+            garages: <%= listing.garages %><br>
+            expiration: <%= listing.expiration %><br>
+            feature: <%= listing.feature %><br>
+            address: <%= listing.address %><br>
+        </div>
+        <!-- End Main Content -->
 
     <% include partials/footer %>
-
-</body>
-</html>

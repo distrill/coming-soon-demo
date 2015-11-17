@@ -1,32 +1,23 @@
-<!DOCTYPE html>
-<!--
-    author:         Brent Hamilton (2015)
-    checkit:        https://github.com/distrill
--->
-<html>
-    <% include partials/head %>
-<body>
+<% include partials/head %>
 
-    <% include partials/header %>
+        <!-- main content, scroll options and map -->
+        <div class="front-page-main-content">
 
-    <!-- main content, scroll options and map -->
-    <div class="front-page-main-content">
+            <!-- scroll content, left side -->
+            <div class="main-content-scroll-box">
+                <% for (var i in listings) {%>
+                    <div class="listing-elem" style="color:black;">
+                        <%= listings[i]._id %><br>
+                        <a href="/singleListing/<%= listings[i]._id %>">see more</a>
+                    </div>
+                <% } %>
+            </div>
 
-        <!-- scroll content, left side -->
-        <div class="main-content-scroll-box">
-            <% for (var i=0; i<6; i++) {%>
-                <div class="listing-elem"></div>
-            <% } %>
-        </div>
+            <!-- map content, right side -->
+            <div class="main-content-map">
+                main content map
+            </div>
 
-        <!-- map content, right side -->
-        <div class="main-content-map">
-            main content map
-        </div>
+        </div>  <!-- end main content -->
 
-    </div>  <!-- end main content -->
-
-    <% include partials/footer %>
-
-</body>
-</html>
+<% include partials/footer %>
