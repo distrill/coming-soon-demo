@@ -62,12 +62,17 @@ html, body {
   padding: 5rem 2rem;
   width: 100%;
   height: 100%; }
-  .front-page-main-content .main-content-scroll-box {
-    overflow-y: scroll;
+  .front-page-main-content .scroll-box-container {
+    overflow: hidden;
+    margin-right: -16px;
     display: inline-block;
     width: 30%;
     height: 100%;
     background: blue; }
+    .front-page-main-content .scroll-box-container .main-content-scroll-box {
+      margin-right: -15px;
+      height: 100%;
+      overflow-y: scroll; }
   .front-page-main-content .main-content-map {
     display: inline-block;
     float: right;
@@ -77,7 +82,7 @@ html, body {
 
 .listing-elem {
   width: 100%;
-  height: 40%;
+  height: 150px;
   border: solid 1px black;
   background: white; }
 

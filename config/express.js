@@ -23,7 +23,7 @@ module.exports = function() {
     var server = http.createServer(app);
 
     require('../app/routes/index.routes.js')(app);
-    require('../app/routes/listings.routes.js')(app);
+    require('../app/routes/listing.routes.js')(app);
 
     return server;
 };

@@ -2,6 +2,7 @@
 
         <!-- Main Content -->
         <div class="view-single-listing">
+            <br>
             single listing page, w/ the following data:<br><br>
             id: <%= listing._id %><br>
             title: <%= listing.title %><br>
@@ -13,6 +14,11 @@
             expiration: <%= listing.expiration %><br>
             feature: <%= listing.feature %><br>
             address: <%= listing.address %><br>
+            <br><br><br>
+            <% if (admin) { %>
+                <a href="/listing/edit/<%= listing._id %>">edit</a>
+                <a href="/listing/delete/<%= listing._id %>">delete</a>
+            <% } %>
         </div>
         <!-- End Main Content -->
 

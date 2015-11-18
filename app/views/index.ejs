@@ -4,13 +4,16 @@
         <div class="front-page-main-content">
 
             <!-- scroll content, left side -->
-            <div class="main-content-scroll-box">
-                <% for (var i in listings) {%>
-                    <div class="listing-elem" style="color:black;">
-                        <%= listings[i]._id %><br>
-                        <a href="/singleListing/<%= listings[i]._id %>">see more</a>
-                    </div>
-                <% } %>
+            <div class="scroll-box-container">
+                <div class="main-content-scroll-box">
+                    <% for (var i in listings) {%>
+                        <a href="/listing/<%= listings[i]._id %>">
+                            <div class="listing-elem" style="color:black;">
+                                <%= listings[i]._id %><br>
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
             </div>
 
             <!-- map content, right side -->

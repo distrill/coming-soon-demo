@@ -1,16 +1,7 @@
-var Listing = require('mongoose').model('Listing');
+var listing = require('./listing.controller');
 
 module.exports.renderIndex = function(req, res) {
-    Listing.find({}).find(function(err, listingResults) {
-       if (err) {
-           console.log('ERROR: listing.controller: readAll(): ' + err);
-       }  else {
-           console.log(listingResults);
-           res.render('index', {
-               listings: listingResults
-           });
-       }
-   });
+    listing.readAll(req, res);
 };
 
 module.exports.renderAdmin = function(req, res) {
