@@ -5,6 +5,9 @@
 
         <!-- navigation bar -->
         <nav class="navbar">
+            <a class="signin-out" href="<%= admin ? '/logout' : '' %>">
+                <%= admin ? 'logout' : '' %>
+            </a>
             <ul>
                 <a href="/"><li>home</li></a>
                 <a href="#"><li>properties</li></a>

@@ -1,9 +1,48 @@
 var index = require('../controllers/index.controller.js');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
     app .route('/')
         .get(index.renderIndex);
 
     app .route('/admin')
-        .get(index.renderAdmin);
+        .get(isAdmin, index.renderAdmin);
+
+    app .route('/signin')
+        .get(function(req, res) {
+            res.render('signin', {
+                message: req.flash('loginMessage')
+            });
+        })
+        .post(passport.authenticate('local-login', {
+            successRedirect: '/admin',
+            failureRedirect: '/signin',
+            failureFlash: true
+        }));
+
+    app .route('/signup')
+        .get(function(req, res) {
+            res.render('signup', {
+                message: req.flash('signupMessage')
+            });
+        })
+        .post(passport.authenticate('local-signup', {
+            successRedirect: '/admin',
+            failureRedirect: '/signup',
+            failureFlash: true
+        }));
+
+    app .route('/logout')
+        .get(function(req, res) {
+            req.logout();
+            res.redirect('/');
+        });
+
+    function isAdmin(req, res, next) {
+        // if the user is admin-authenticated in session, carry on
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        // otherwise fuck off
+        res.redirect('/signin');
+    }
 };

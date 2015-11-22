@@ -5,7 +5,9 @@ var Listing = require('mongoose').model('Listing');
 module.exports.renderNewListing = function(req, res, next) {
     res.render('newListing', {
         // never edit, but same view so we have to specify
-        edit: false
+        admin: req.isAuthenticated() ? true : false,
+        edit: false,
+        listing: {}
     });
 };
 
@@ -13,6 +15,7 @@ module.exports.renderUpdateListing = function(req, res) {
     res.render('newListing', {
         // check if admin. this route should always (edit == true)
         // but same view so we have to specify
+        admin: req.isAuthenticated() ? true : false,
         edit: true,
         listing: req.listing
     });
@@ -41,7 +44,7 @@ module.exports.create = function(req, res, next) {
 module.exports.readOne = function(req, res) {
     res.render('singleListing', {
         // check if admin, then set edit flag accordingly
-        admin: true,
+        admin: req.isAuthenticated() ? true : false,
         listing: req.listing
     });
 };
@@ -54,6 +57,7 @@ module.exports.readAll = function(req, res) {
        }  else {
            console.log(listingResults);
            res.render('index', {
+               admin: req.admin ? true : false,
                listings: listingResults
            });
        }

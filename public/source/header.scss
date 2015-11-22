@@ -3,6 +3,13 @@
 .navbar {
     background: $black;
     color: $white;
+    z-index: 5;
+    .signin-out {
+        color: $white;
+        float: left;
+        line-height: 3rem;
+        padding-left: 1rem;
+    }
     ul {
         text-align: right;
         margin: 0 5% 0 0;

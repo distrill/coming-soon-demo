@@ -8,24 +8,24 @@
         <% } %>
         <form method="post">
             <input type="text" name="title" placeholder="title"
-                value="<%= edit ? listing.title : '' %>"><br>
+                value="<%= admin ? listing.title : '' %>"><br>
             <input type="text" name="price" placeholder="price"
-                value="<%= edit ? listing.price : '' %>"><br>
+                value="<%= admin ? listing.price : '' %>"><br>
             <input type="text" name="beds" placeholder="beds"
-                value="<%= edit ? listing.beds : '' %>"><br>
+                value="<%= admin ? listing.beds : '' %>"><br>
             <input type="text" name="baths" placeholder="baths"
-                value="<%= edit ? listing.baths : '' %>"><br>
+                value="<%= admin ? listing.baths : '' %>"><br>
             <input type="text" name="squareFeet" placeholder="squareFeet"
-                value="<%= edit ? listing.squareFeet : '' %>"><br>
+                value="<%= admin ? listing.squareFeet : '' %>"><br>
             <input type="text" name="garages" placeholder="garages"
-                value="<%= edit ? listing.garages : '' %>"><br>
+                value="<%= admin ? listing.garages : '' %>"><br>
             <input type="text" name="expiration" placeholder="expiration"
-                value="<%= edit ? listing.expiration : '' %>"><br>
+                value="<%= admin ? listing.expiration : '' %>"><br>
             <input type="text" name="feature" placeholder="feature"
-                value="<%= edit ? listing.feature : '' %>"><br>
+                value="<%= admin ? listing.feature : '' %>"><br>
             <input type="text" name="address" placeholder="address"
-                value="<%= edit? listing.address : '' %>"><br>
-            <input type="submit" value="<%= edit ? 'update' : 'add' %> Listing"/>
+                value="<%= admin ? listing.address : '' %>"><br>
+            <input type="submit" value="<%= !admin? 'update' : 'add' %> Listing"/>
         </form>
         <!-- End Main Content -->
 

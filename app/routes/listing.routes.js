@@ -1,8 +1,8 @@
 var listing = require('../controllers/listing.controller.js');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
     app .route('/newListing')
-        .get(listing.renderNewListing)
+        .get(isAdmin, listing.renderNewListing)
         .post(listing.create);
 
     app .route('/listing/:listingID')
@@ -10,11 +10,20 @@ module.exports = function(app) {
         // .post(listing.delete);
 
     app .route('/listing/edit/:listingID')
-        .get(listing.renderUpdateListing)
+        .get(isAdmin, listing.renderUpdateListing)
         .post(listing.update);
 
     app .route('/listing/delete/:listingID')
-        .get(listing.delete);
+        .get(isAdmin, listing.delete);
 
     app .param('listingID', listing.listingByID);
+
+    function isAdmin(req, res, next) {
+        // if the user is admin-authenticated in session, carry on
+        if (req.isAuthenticated()) {
+            return next();
+        }
+        // otherwise fuck off
+        res.redirect('/signin');
+    }
 };

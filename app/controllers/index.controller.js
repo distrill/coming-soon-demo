@@ -5,5 +5,7 @@ module.exports.renderIndex = function(req, res) {
 };
 
 module.exports.renderAdmin = function(req, res) {
-   res.render('admin', {});
+   res.render('admin', {
+       admin: req.isAuthenticated() ? true : false
+   });
 };
