@@ -16,22 +16,28 @@
                 </div>
             </div>
 
+            <div class="power-mode-activated">
+                this is the hook
+            </div>
+
             <!-- map content, right side -->
             <div id="main-content-map" class="main-content-map">
-                <%# main content map%>
+                <%# main content map%>S
+
             </div>
 
         </div>  <!-- end main content -->
-        <script type="text/javascript">
-            var map;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('main-content-map'), {
-                    center: {lat: -34.397, lng: 150.644},
-                    zoom: 8
-                });
-            }
-        </script>
 
+        <script type="text/javascript"
+            src="/js/index.js">
+        </script>
+        <script>
+            console.log(<%= listings %>);
+        </script>
+        <script>
+            console.log('this is the ' + <%= listings %>);
+        </script>
+        <!-- <% console.log('thiss is the hook'); %> -->
         <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD6z7VYj8sadyJN_59d4ul6ztbynS4n2E&callback=initMap">
         </script>
