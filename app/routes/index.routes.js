@@ -20,16 +20,8 @@ module.exports = function(app, passport) {
         }));
 
     app .route('/signup')
-        .get(function(req, res) {
-            res.render('signup', {
-                message: req.flash('signupMessage')
-            });
-        })
-        .post(passport.authenticate('local-signup', {
-            successRedirect: '/admin',
-            failureRedirect: '/signup',
-            failureFlash: true
-        }));
+        .get(index.renderSignup)
+        .post(index.signup);
 
     app .route('/logout')
         .get(function(req, res) {

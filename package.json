@@ -22,7 +22,8 @@
     "node-geocoder": "^3.4.1",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
-    "reload": "^0.7.0"
+    "reload": "^0.7.0",
+    "twilio": "^2.7.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

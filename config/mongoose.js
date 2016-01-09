@@ -6,6 +6,7 @@ module.exports = function() {
 
     require('../app/models/listing.model.js');
     require('../app/models/admin.model.js');
+    require('../app/models/lead.model.js');
 
     return db;
 };

@@ -68,6 +68,12 @@ html, body {
   left: 0;
   padding: 2rem;
   width: 100%; }
+  .front-page-main-content .main-content-map {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: red; }
   .front-page-main-content .scroll-box-container {
     overflow-y: scroll;
     display: inline-block;
@@ -76,12 +82,6 @@ html, body {
     background: blue; }
     .front-page-main-content .scroll-box-container .main-content-scroll-box {
       height: 100%; }
-  .front-page-main-content .main-content-map {
-    display: inline-block;
-    float: left;
-    width: 50%;
-    height: 100%;
-    background: red; }
 
 .listing-elem {
   width: 100%;
